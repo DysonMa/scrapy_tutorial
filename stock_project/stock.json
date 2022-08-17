@@ -1,0 +1,29 @@
+[
+    {
+        "stock_name": "2454 聯發科",
+        "date": "2022-06-24 00:00:00",
+        "deal_price": 670.0,
+        "opening_price": 682.0,
+        "closing_price": 689.0,
+        "highest_price": 696.0,
+        "lowest_price": 669.0
+    },
+    {
+        "stock_name": "2330 台積電",
+        "date": "2022-06-24 00:00:00",
+        "deal_price": 486.5,
+        "opening_price": 489.5,
+        "closing_price": 485.5,
+        "highest_price": 492.5,
+        "lowest_price": 485.5
+    },
+    {
+        "stock_name": "2317 鴻海",
+        "date": "2022-06-24 00:00:00",
+        "deal_price": 110.0,
+        "opening_price": 109.0,
+        "closing_price": 108.0,
+        "highest_price": 110.5,
+        "lowest_price": 108.5
+    }
+]

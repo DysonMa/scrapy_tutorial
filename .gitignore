@@ -1,0 +1,10 @@
+__pycache__
+venv
+logging.txt
+dbs
+eggs
+build
+*.egg-info
+scrapinghub.yml
+logs
+setup.py
