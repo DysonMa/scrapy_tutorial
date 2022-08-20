@@ -1,0 +1,1 @@
+cmd /c "cd ./venv/Scripts & activate & cd ../../ptt_project & scrapy crawl ptt -L WARNING"
