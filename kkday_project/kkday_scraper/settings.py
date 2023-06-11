@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -90,7 +90,17 @@ DOWNLOADER_MIDDLEWARES = {
 
 # scrapy_selenium
 SELENIUM_DRIVER_NAME = 'chrome'   # browser name
-SELENIUM_DRIVER_EXECUTABLE_PATH = '../chromedriver.exe'   # exe path
-SELENIUM_DRIVER_ARGUMENTS = ['-headless']   # do not open browser
+SELENIUM_DRIVER_EXECUTABLE_PATH = '../chromedriver_mac64/chromedriver'  # exe path
+# ==================================================================================
+# For Windows: `../chromedriver_win32/chromedriver.exe`
+# For Mac: `../chromedriver_mac64/chromedriver`
+
+# If Mac has this error: 
+# Error: “chromedriver” cannot be opened because the developer cannot be verified. Unable to launch the chrome browser
+# Try this command: 
+# `xattr -d com.apple.quarantine <path-of-chromedriver-exeutable-file>`
+# Ref: https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de
+# ==================================================================================
+SELENIUM_DRIVER_ARGUMENTS = ['-head']   # `-headless`: do not open browser, `-head`: open browser
 
 FEED_EXPORT_ENCODING = 'utf8'

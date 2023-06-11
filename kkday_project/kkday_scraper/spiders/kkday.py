@@ -16,7 +16,8 @@ class KkdaySpider(scrapy.Spider):
         yield SeleniumRequest(
             url=self.url+self.categories[0],
             wait_time=5,
-            callback=self.parse
+            callback=self.parse,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"}
         )
 
     def parse(self, response):
@@ -35,8 +36,8 @@ class KkdaySpider(scrapy.Spider):
             rate = card.css(".product-card__info-score::text").get()
             vote_number = card.css(".product-card__info-number::text").get()
             order_number = card.css(".product-card__info-order-number::text").get()
-            price = card.css(".currency::text").get() + card.css(".price::text").get()
-
+            price = "".join(card.css(".kk-price__sale div.layout-list-inline__item:nth-child(1) span::text").getall())  # UPDATE: 2023/01/29
+            # price = card.css(".currency::text").get() + card.css(".price::text").get()  # Deprecate
 
             item["title"] = title.strip() if title is not None else title
             item["link"] = link

@@ -90,8 +90,18 @@ DOWNLOADER_MIDDLEWARES = {
 
 # scrapy_selenium
 SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_DRIVER_EXECUTABLE_PATH = '../chromedriver.exe'
-SELENIUM_DRIVER_ARGUMENTS = ['-head']
+SELENIUM_DRIVER_EXECUTABLE_PATH = '../chromedriver_mac64/chromedriver'  # exe path
+# ==================================================================================
+# For Windows: `../chromedriver_win32/chromedriver.exe`
+# For Mac: `../chromedriver_mac64/chromedriver`
+
+# If Mac has this error: 
+# Error: “chromedriver” cannot be opened because the developer cannot be verified. Unable to launch the chrome browser
+# Try this command: 
+# xattr -d com.apple.quarantine <path-of-chromedriver-exeutable-file>
+# Ref: https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de
+# ==================================================================================
+SELENIUM_DRIVER_ARGUMENTS = ['-head']   # `-headless`: do not open browser, `-head`: open browser
 
 # export
 FEED_EXPORT_ENCODING = 'utf8'

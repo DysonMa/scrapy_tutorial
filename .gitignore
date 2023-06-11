@@ -8,3 +8,5 @@ build
 scrapinghub.yml
 logs
 setup.py
+chromedriver_test.py
+.DS_Store
